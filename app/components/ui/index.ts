@@ -34,6 +34,9 @@ export * from './StatusIndicator';
 export * from './TabsWithSlider';
 export * from './TokenUsageDisplay';
 export * from './ContextOptimizationPanel';
+export * from './SmartPromptIndicator';
+export * from './ProjectPlanViewer';
+export * from './ChangeReviewDialog';
 
 // Tooltip components
 export { default as WithTooltip } from './Tooltip';

@@ -10,8 +10,10 @@ import OllamaProvider from './providers/ollama';
 import OpenRouterProvider from './providers/open-router';
 import OpenAILikeProvider from './providers/openai-like';
 import OpenAIProvider from './providers/openai';
+import AzureOpenAIProvider from './providers/azure-openai';
 import PerplexityProvider from './providers/perplexity';
 import TogetherProvider from './providers/together';
+import VertexAIProvider from './providers/vertex-ai';
 import XAIProvider from './providers/xai';
 import HyperbolicProvider from './providers/hyperbolic';
 import AmazonBedrockProvider from './providers/amazon-bedrock';
@@ -19,6 +21,7 @@ import GithubProvider from './providers/github';
 
 export {
   AnthropicProvider,
+  AzureOpenAIProvider,
   CohereProvider,
   DeepseekProvider,
   GoogleProvider,
@@ -31,6 +34,7 @@ export {
   OpenRouterProvider,
   OpenAILikeProvider,
   PerplexityProvider,
+  VertexAIProvider,
   XAIProvider,
   TogetherProvider,
   LMStudioProvider,
