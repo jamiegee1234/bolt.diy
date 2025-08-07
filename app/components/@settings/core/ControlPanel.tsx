@@ -20,6 +20,7 @@ import SettingsTab from '~/components/@settings/tabs/settings/SettingsTab';
 import NotificationsTab from '~/components/@settings/tabs/notifications/NotificationsTab';
 import FeaturesTab from '~/components/@settings/tabs/features/FeaturesTab';
 import { DataTab } from '~/components/@settings/tabs/data/DataTab';
+import { SQLTab } from '~/components/@settings/tabs/sql/SQLTab';
 import { EventLogsTab } from '~/components/@settings/tabs/event-logs/EventLogsTab';
 import ConnectionsTab from '~/components/@settings/tabs/connections/ConnectionsTab';
 import CloudProvidersTab from '~/components/@settings/tabs/providers/cloud/CloudProvidersTab';
@@ -130,6 +131,8 @@ export const ControlPanel = ({ open, onClose }: ControlPanelProps) => {
         return <FeaturesTab />;
       case 'data':
         return <DataTab />;
+      case 'sql':
+        return <SQLTab />;
       case 'cloud-providers':
         return <CloudProvidersTab />;
       case 'local-providers':
