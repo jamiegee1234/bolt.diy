@@ -20,6 +20,7 @@ import SettingsTab from '~/components/@settings/tabs/settings/SettingsTab';
 import NotificationsTab from '~/components/@settings/tabs/notifications/NotificationsTab';
 import FeaturesTab from '~/components/@settings/tabs/features/FeaturesTab';
 import { DataTab } from '~/components/@settings/tabs/data/DataTab';
+import { SQLTab } from '~/components/@settings/tabs/sql/SQLTab';
 import { EventLogsTab } from '~/components/@settings/tabs/event-logs/EventLogsTab';
 import ConnectionsTab from '~/components/@settings/tabs/connections/ConnectionsTab';
 import CloudProvidersTab from '~/components/@settings/tabs/providers/cloud/CloudProvidersTab';
@@ -33,7 +34,7 @@ interface ControlPanelProps {
 }
 
 // Beta status for experimental features
-const BETA_TABS = new Set<TabType>(['service-status', 'local-providers', 'mcp']);
+const BETA_TABS = new Set<TabType>(['sql', 'service-status', 'local-providers', 'mcp']);
 
 const BetaLabel = () => (
   <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-purple-500/10 dark:bg-purple-500/20">
@@ -130,6 +131,8 @@ export const ControlPanel = ({ open, onClose }: ControlPanelProps) => {
         return <FeaturesTab />;
       case 'data':
         return <DataTab />;
+      case 'sql':
+        return <SQLTab />;
       case 'cloud-providers':
         return <CloudProvidersTab />;
       case 'local-providers':
