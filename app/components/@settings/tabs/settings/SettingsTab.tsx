@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { classNames } from '~/utils/classNames';
 import { Switch } from '~/components/ui/Switch';
+import { ContextOptimizationPanel } from '~/components/ui';
 import type { UserProfile } from '~/components/@settings/core/types';
 import { isMac } from '~/utils/os';
 
@@ -208,6 +209,27 @@ export default function SettingsTab() {
               </kbd>
             </div>
           </div>
+        </div>
+      </motion.div>
+
+      {/* Context Optimization */}
+      <motion.div
+        className="bg-white dark:bg-[#0A0A0A] rounded-lg shadow-sm dark:shadow-none"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <div className="p-4 border-b border-[#E5E5E5] dark:border-[#1A1A1A]">
+          <div className="flex items-center gap-2">
+            <div className="i-ph:gauge-fill w-4 h-4 text-purple-500" />
+            <span className="text-sm font-medium text-bolt-elements-textPrimary">Context Optimization</span>
+          </div>
+          <p className="text-xs text-bolt-elements-textSecondary mt-1">
+            Manage conversation context and reduce token usage
+          </p>
+        </div>
+        <div className="p-0">
+          <ContextOptimizationPanel />
         </div>
       </motion.div>
     </div>

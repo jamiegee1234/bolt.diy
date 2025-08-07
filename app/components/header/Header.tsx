@@ -4,6 +4,7 @@ import { chatStore } from '~/lib/stores/chat';
 import { classNames } from '~/utils/classNames';
 import { HeaderActionButtons } from './HeaderActionButtons.client';
 import { ChatDescription } from '~/lib/persistence/ChatDescription.client';
+import { TokenUsageDisplay } from '~/components/ui';
 
 export function Header() {
   const chat = useStore(chatStore);
@@ -30,7 +31,8 @@ export function Header() {
           </span>
           <ClientOnly>
             {() => (
-              <div className="">
+              <div className="flex items-center gap-3">
+                <TokenUsageDisplay compact />
                 <HeaderActionButtons chatStarted={chat.started} />
               </div>
             )}

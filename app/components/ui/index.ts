@@ -32,6 +32,8 @@ export * from './SearchInput';
 export * from './SearchResultItem';
 export * from './StatusIndicator';
 export * from './TabsWithSlider';
+export * from './TokenUsageDisplay';
+export * from './ContextOptimizationPanel';
 
 // Tooltip components
 export { default as WithTooltip } from './Tooltip';
