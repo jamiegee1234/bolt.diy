@@ -360,6 +360,9 @@ importers:
       '@iconify-json/ph':
         specifier: ^1.2.1
         version: 1.2.2
+      '@iconify-json/si':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@iconify/types':
         specifier: ^2.0.0
         version: 2.0.0
@@ -1952,6 +1955,9 @@ packages:
 
   '@iconify-json/ph@1.2.2':
     resolution: {integrity: sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw==}
+
+  '@iconify-json/si@1.2.5':
+    resolution: {integrity: sha512-/wbiRqOWb8wiDpah/OTSsJ+ZdEQppwrByJhn85BtlY8l89pGwebE8o6RXWFnY+7LANSiD5S2OOvgeZKQgBnpRQ==}
 
   '@iconify-json/svg-spinners@1.2.2':
     resolution: {integrity: sha512-DIErwfBWWzLfmAG2oQnbUOSqZhDxlXvr8941itMCrxQoMB0Hiv8Ww6Bln/zIgxwjDvSem2dKJtap+yKKwsB/2A==}
@@ -9860,6 +9866,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.3': {}
 
   '@iconify-json/ph@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/si@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 

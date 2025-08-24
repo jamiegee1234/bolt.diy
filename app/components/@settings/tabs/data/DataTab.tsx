@@ -282,7 +282,7 @@ export function DataTab() {
         <h2 className="text-xl font-semibold mb-4 text-bolt-elements-textPrimary">Chats</h2>
         {dbLoading ? (
           <div className="flex items-center justify-center p-4">
-            <div className="i-ph-spinner-gap-bold animate-spin w-6 h-6 mr-2" />
+            <div className="i-ph:spinner-gap-bold animate-spin w-6 h-6 mr-2" />
             <span>Loading chats database...</span>
           </div>
         ) : (
@@ -291,7 +291,7 @@ export function DataTab() {
               <CardHeader>
                 <div className="flex items-center mb-2">
                   <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                    <div className="i-ph-download-duotone w-5 h-5" />
+                    <div className="i-ph:download-duotone w-5 h-5" />
                   </motion.div>
                   <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                     Export All Chats
@@ -338,7 +338,7 @@ export function DataTab() {
                   >
                     {isExporting ? (
                       <>
-                        <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                        <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                         Exporting...
                       </>
                     ) : availableChats.length === 0 ? (
@@ -377,7 +377,7 @@ export function DataTab() {
                   >
                     {isExporting ? (
                       <>
-                        <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                        <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                         Exporting...
                       </>
                     ) : (
@@ -392,7 +392,7 @@ export function DataTab() {
               <CardHeader>
                 <div className="flex items-center mb-2">
                   <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                    <div className="i-ph-upload-duotone w-5 h-5" />
+                    <div className="i-ph:upload-duotone w-5 h-5" />
                   </motion.div>
                   <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                     Import Chats
@@ -414,7 +414,7 @@ export function DataTab() {
                   >
                     {isImporting ? (
                       <>
-                        <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                        <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                         Importing...
                       </>
                     ) : (
@@ -433,7 +433,7 @@ export function DataTab() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <div className="i-ph-trash-duotone w-5 h-5" />
+                    <div className="i-ph:trash-duotone w-5 h-5" />
                   </motion.div>
                   <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                     Delete All Chats
@@ -455,7 +455,7 @@ export function DataTab() {
                   >
                     {isDeleting ? (
                       <>
-                        <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                        <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                         Deleting...
                       </>
                     ) : (
@@ -477,7 +477,7 @@ export function DataTab() {
             <CardHeader>
               <div className="flex items-center mb-2">
                 <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <div className="i-ph-download-duotone w-5 h-5" />
+                  <div className="i-ph:download-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Export All Settings
@@ -499,7 +499,7 @@ export function DataTab() {
                 >
                   {isExporting ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Exporting...
                     </>
                   ) : (
@@ -514,7 +514,7 @@ export function DataTab() {
             <CardHeader>
               <div className="flex items-center mb-2">
                 <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <div className="i-ph-filter-duotone w-5 h-5" />
+                  <div className="i-ph:funnel-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Export Selected Settings
@@ -536,7 +536,7 @@ export function DataTab() {
                 >
                   {isExporting ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Exporting...
                     </>
                   ) : (
@@ -551,7 +551,7 @@ export function DataTab() {
             <CardHeader>
               <div className="flex items-center mb-2">
                 <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <div className="i-ph-upload-duotone w-5 h-5" />
+                  <div className="i-ph:upload-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Import Settings
@@ -573,7 +573,7 @@ export function DataTab() {
                 >
                   {isImporting ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Importing...
                     </>
                   ) : (
@@ -592,7 +592,7 @@ export function DataTab() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <div className="i-ph-arrow-counter-clockwise-duotone w-5 h-5" />
+                  <div className="i-ph:arrow-counter-clockwise-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Reset All Settings
@@ -614,7 +614,7 @@ export function DataTab() {
                 >
                   {isResetting ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Resetting...
                     </>
                   ) : (
@@ -635,7 +635,7 @@ export function DataTab() {
             <CardHeader>
               <div className="flex items-center mb-2">
                 <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <div className="i-ph-file-text-duotone w-5 h-5" />
+                  <div className="i-ph:file-text-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Download Template
@@ -657,7 +657,7 @@ export function DataTab() {
                 >
                   {isDownloadingTemplate ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Downloading...
                     </>
                   ) : (
@@ -672,7 +672,7 @@ export function DataTab() {
             <CardHeader>
               <div className="flex items-center mb-2">
                 <motion.div className="text-accent-500 mr-2" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <div className="i-ph-upload-duotone w-5 h-5" />
+                  <div className="i-ph:upload-duotone w-5 h-5" />
                 </motion.div>
                 <CardTitle className="text-lg group-hover:text-bolt-elements-item-contentAccent transition-colors">
                   Import API Keys
@@ -694,7 +694,7 @@ export function DataTab() {
                 >
                   {isImportingKeys ? (
                     <>
-                      <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                      <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                       Importing...
                     </>
                   ) : (

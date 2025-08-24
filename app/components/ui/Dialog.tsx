@@ -227,7 +227,7 @@ export function ConfirmationDialog({
             >
               {isLoading ? (
                 <>
-                  <div className="i-ph-spinner-gap-bold animate-spin w-4 h-4 mr-2" />
+                  <div className="i-ph:spinner-gap-bold animate-spin w-4 h-4 mr-2" />
                   {confirmLabel}
                 </>
               ) : (

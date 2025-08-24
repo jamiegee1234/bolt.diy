@@ -162,6 +162,7 @@
     "@cloudflare/workers-types": "^4.20241127.0",
     "@electron/notarize": "^2.5.0",
     "@iconify-json/ph": "^1.2.1",
+    "@iconify-json/si": "^1.2.5",
     "@iconify/types": "^2.0.0",
     "@remix-run/dev": "^2.15.2",
     "@remix-run/serve": "^2.15.2",
