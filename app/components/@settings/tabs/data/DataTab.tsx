@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Button } from '~/components/ui/Button';
 import { ConfirmationDialog, SelectionDialog } from '~/components/ui/Dialog';
@@ -17,11 +18,18 @@ function useBoltHistoryDB() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
+    let localDb: IDBDatabase | undefined;
+
     const initDB = async () => {
       try {
         setIsLoading(true);
 
         const database = await openDatabase();
+        if (!isMounted) {
+          return;
+        }
+        localDb = database;
         setDb(database || null);
         setIsLoading(false);
       } catch (err) {
@@ -33,8 +41,9 @@ function useBoltHistoryDB() {
     initDB();
 
     return () => {
-      if (db) {
-        db.close();
+      isMounted = false;
+      if (localDb) {
+        localDb.close();
       }
     };
   }, []);
@@ -48,16 +57,23 @@ interface ExtendedChat extends Chat {
   updatedAt?: number;
 }
 
+// Helper to safely format the last updated timestamp
+function formatLastUpdated(chat: ExtendedChat): string {
+  const updatedAtTs = typeof chat.updatedAt === 'number' ? chat.updatedAt : undefined;
+  const parsed = Date.parse((chat as Chat).timestamp);
+  const timestampTs = Number.isFinite(parsed) ? parsed : undefined;
+  const ts = updatedAtTs ?? timestampTs ?? Date.now();
+  return new Date(ts).toLocaleString();
+}
+
 // Helper function to create a chat label and description
 function createChatItem(chat: Chat): ChatItem {
   return {
     id: chat.id,
-
     // Use description as title if available, or format a short ID
     label: (chat as ExtendedChat).title || chat.description || `Chat ${chat.id.slice(0, 8)}`,
-
     // Format the description with message count and timestamp
-    description: `${chat.messages.length} messages - Last updated: ${new Date((chat as ExtendedChat).updatedAt || Date.parse(chat.timestamp)).toLocaleString()}`,
+    description: `${chat.messages.length} messages - Last updated: ${formatLastUpdated(chat as ExtendedChat)}`,
   };
 }
 
@@ -141,25 +157,14 @@ export function DataTab() {
   // Load available chats
   useEffect(() => {
     if (db) {
-      console.log('Loading chats from boltHistory database', {
-        name: db.name,
-        version: db.version,
-        objectStoreNames: Array.from(db.objectStoreNames),
-      });
-
       getAllChats(db)
         .then((chats) => {
-          console.log('Found chats:', chats.length);
-
-          // Cast to ExtendedChat to handle additional properties
           const extendedChats = chats as ExtendedChat[];
           setAvailableChats(extendedChats);
-
           // Create ChatItems for selection dialog
           setChatItems(extendedChats.map((chat) => createChatItem(chat)));
         })
         .catch((error) => {
-          console.error('Error loading chats:', error);
           toast.error('Failed to load chats: ' + (error instanceof Error ? error.message : 'Unknown error'));
         });
     }
@@ -309,12 +314,6 @@ export function DataTab() {
                           return;
                         }
 
-                        console.log('Database information:', {
-                          name: db.name,
-                          version: db.version,
-                          objectStoreNames: Array.from(db.objectStoreNames),
-                        });
-
                         if (availableChats.length === 0) {
                           toast.warning('No chats available to export');
                           return;
@@ -322,10 +321,7 @@ export function DataTab() {
 
                         await handleExportAllChats();
                       } catch (error) {
-                        console.error('Error exporting chats:', error);
-                        toast.error(
-                          `Failed to export chats: ${error instanceof Error ? error.message : 'Unknown error'}`,
-                        );
+                        toast.error(`Failed to export chats: ${error instanceof Error ? error.message : 'Unknown error'}`);
                       }
                     }}
                     disabled={isExporting || availableChats.length === 0}
