@@ -240,7 +240,12 @@ export default defineConfig({
     presetIcons({
       warn: true,
       collections: {
+        // Local app icons under the `bolt:` collection
         ...customIconCollection,
+        // Ensure popular external collections are available
+        // Requires: @iconify-json/simple-icons and @iconify-json/ph
+        si: () => import('@iconify-json/simple-icons/icons.json').then((i) => i.default),
+        ph: () => import('@iconify-json/ph/icons.json').then((i) => i.default),
       },
       unit: 'em',
     }),
