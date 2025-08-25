@@ -18,10 +18,10 @@ export default defineConfig((config) => {
     },
     plugins: [
       nodePolyfills({
-        include: ['buffer', 'process', 'util', 'stream'],
+        include: ['buffer'],
         globals: {
           Buffer: true,
-          process: true,
+          process: false,
           global: true,
         },
         protocolImports: true,
@@ -54,6 +54,14 @@ export default defineConfig((config) => {
       chrome129IssuePlugin(),
       config.mode === 'production' && optimizeCssModules({ apply: 'build' }),
     ],
+    resolve: {
+      alias: {
+        'node:buffer': 'buffer',
+      },
+    },
+    optimizeDeps: {
+      include: ['buffer'],
+    },
     envPrefix: [
       'VITE_',
       'OPENAI_LIKE_API_BASE_URL',

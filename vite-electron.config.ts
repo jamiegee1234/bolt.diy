@@ -27,7 +27,11 @@ export default defineConfig((config) => {
     },
     plugins: [
       nodePolyfills({
-        include: ['path', 'buffer', 'process'],
+        include: ['buffer', 'path'],
+        globals: {
+          Buffer: true,
+          process: false,
+        },
       }),
       remixVitePlugin({
         future: {
@@ -57,6 +61,14 @@ export default defineConfig((config) => {
         },
       },
     ],
+    resolve: {
+      alias: {
+        'node:buffer': 'buffer',
+      },
+    },
+    optimizeDeps: {
+      include: ['buffer'],
+    },
     envPrefix: [
       'VITE_',
       'OPENAI_LIKE_API_BASE_URL',
