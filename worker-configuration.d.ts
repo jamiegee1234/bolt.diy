@@ -18,4 +18,7 @@ interface Env {
   XAI_API_KEY: string;
   PERPLEXITY_API_KEY: string;
   AWS_BEDROCK_CONFIG: string;
+  FIGMA_API_KEY: string;
+  LOVEABLE_API_KEY: string;
+  LOVEABLE_API_BASE_URL: string;
 }
